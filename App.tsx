@@ -1,11 +1,17 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import { StyleSheet, View } from "react-native";
+import Toggle from "./components/Toggle";
+import { COLORS } from "./constants";
 
 export default function App() {
+  const [isToggled, setIsToggled] = useState(false);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Toggle
+        toggled={isToggled}
+        onPress={() => setIsToggled((prev) => !prev)}
+      />
     </View>
   );
 }
@@ -13,7 +19,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.GRAY_DARK,
     alignItems: "center",
     justifyContent: "center",
   },
