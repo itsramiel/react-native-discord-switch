@@ -27,12 +27,12 @@ const Toggle = ({ toggled, ...props }: ToggleProps) => {
     if (toggled === true) {
       animated.value = withTiming(1, {
         easing: Easing.inOut(Easing.sin),
-        duration: 400,
+        duration: 1000,
       });
     } else {
       animated.value = withTiming(0, {
         easing: Easing.inOut(Easing.sin),
-        duration: 400,
+        duration: 1000,
       });
     }
   }, [toggled]);

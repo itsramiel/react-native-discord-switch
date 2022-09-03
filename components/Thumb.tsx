@@ -25,6 +25,8 @@ interface ThumbProps {
 const Thumb = ({ animated }: ThumbProps) => {
   const rStyle = useAnimatedStyle(() => {
     return {
+      alignItems: "center",
+      justifyContent: "center",
       width: interpolate(
         animated.value,
         [0, 0.5, 1],
