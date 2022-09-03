@@ -9,9 +9,9 @@ import Animated, {
 
 const START_LINE_LENGTH = SIZE.THUMB_HEIGHT - 2 * SIZE.PADDING;
 const MIDDLE_LINE_LENGTH = SIZE.THUMB_HEIGHT - 2 * SIZE.PADDING;
-const FINAL_LINE_LENGTH = (SIZE.THUMB_HEIGHT - 2 * SIZE.PADDING) * 0.5;
+const FINAL_LINE_LENGTH = (SIZE.THUMB_HEIGHT - 2 * SIZE.PADDING) * 0.4;
 
-const LINE_THICKNESS = 3;
+const LINE_THICKNESS = 2;
 
 const START_ROTATION = -45;
 const MIDDLE_ROTATION = -90;
@@ -45,7 +45,7 @@ const Line1 = ({ animated }: Line1Props) => {
           translateY: interpolate(
             animated.value,
             [0, 0.5, 1],
-            [0, 0, SIZE.THUMB_HEIGHT / 8]
+            [0, 0, 0.15 * MIDDLE_LINE_LENGTH + FINAL_LINE_LENGTH * 0.5]
           ),
         },
         {
@@ -59,7 +59,7 @@ const Line1 = ({ animated }: Line1Props) => {
           translateY: interpolate(
             animated.value,
             [0, 0.5, 1],
-            [0, 0, -(FINAL_LINE_LENGTH / 2 - LINE_THICKNESS / 2)]
+            [0, 0, -FINAL_LINE_LENGTH * 0.5 + LINE_THICKNESS / 2]
           ),
         },
       ],

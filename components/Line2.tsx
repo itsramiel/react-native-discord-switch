@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { COLORS, SIZE, THEME } from "../constants";
+import { SIZE, THEME } from "../constants";
 import Animated, {
   interpolate,
   interpolateColor,
@@ -11,7 +11,7 @@ const START_LINE_LENGTH = SIZE.THUMB_HEIGHT - 2 * SIZE.PADDING;
 const MIDDLE_LINE_LENGTH = SIZE.THUMB_HEIGHT - 2 * SIZE.PADDING;
 const FINAL_LINE_LENGTH = (SIZE.THUMB_HEIGHT - 2 * SIZE.PADDING) * 0.7;
 
-const LINE_THICKNESS = 3;
+const LINE_THICKNESS = 2;
 
 const START_ROTATION = 45;
 const MIDDLE_ROTATION = 90;
@@ -44,7 +44,7 @@ const Line2 = ({ animated }: Line2Props) => {
           translateY: interpolate(
             animated.value,
             [0, 0.5, 1],
-            [0, 0, SIZE.THUMB_HEIGHT / 8]
+            [0, 0, FINAL_LINE_LENGTH * 0.5]
           ),
         },
         {
@@ -58,7 +58,7 @@ const Line2 = ({ animated }: Line2Props) => {
           translateY: interpolate(
             animated.value,
             [0, 0.5, 1],
-            [0, 0, -FINAL_LINE_LENGTH / 2]
+            [0, 0, -FINAL_LINE_LENGTH * 0.5]
           ),
         },
       ],

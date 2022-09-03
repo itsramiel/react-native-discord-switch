@@ -15,7 +15,7 @@ const { INACTIVE_COLOR, ACTIVE_COLOR } = THEME;
 
 const ANIMATION_CONFIG = {
   easing: Easing.inOut(Easing.sin),
-  duration: 1000,
+  duration: 400,
 };
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
