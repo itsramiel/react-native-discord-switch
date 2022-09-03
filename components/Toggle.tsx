@@ -1,4 +1,4 @@
-import { Pressable, PressableProps, StyleSheet } from "react-native";
+import { Pressable } from "react-native";
 import React, { ComponentProps, useEffect } from "react";
 import Animated, {
   Easing,
@@ -13,6 +13,11 @@ import { SIZE, THEME } from "../constants";
 const { CONTAINER_WIDTH, CONTAINER_HEIGHT, CONTANER_BR, PADDING } = SIZE;
 const { INACTIVE_COLOR, ACTIVE_COLOR } = THEME;
 
+const ANIMATION_CONFIG = {
+  easing: Easing.inOut(Easing.sin),
+  duration: 1000,
+};
+
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
 interface ToggleProps
@@ -25,15 +30,9 @@ const Toggle = ({ toggled, ...props }: ToggleProps) => {
 
   useEffect(() => {
     if (toggled === true) {
-      animated.value = withTiming(1, {
-        easing: Easing.inOut(Easing.sin),
-        duration: 1000,
-      });
+      animated.value = withTiming(1, ANIMATION_CONFIG);
     } else {
-      animated.value = withTiming(0, {
-        easing: Easing.inOut(Easing.sin),
-        duration: 1000,
-      });
+      animated.value = withTiming(0, ANIMATION_CONFIG);
     }
   }, [toggled]);
 
@@ -59,5 +58,3 @@ const Toggle = ({ toggled, ...props }: ToggleProps) => {
 };
 
 export default Toggle;
-
-const styles = StyleSheet.create({});
