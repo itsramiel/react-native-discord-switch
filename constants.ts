@@ -2,10 +2,10 @@ export const COLORS = {
   GRAY_DARK: "rgb(54, 57, 62)",
   GRAY_LIGHT: "rgb(115, 118, 124)",
   WHITE: "rgb(255, 255, 255)",
-  RED: "rgb(191, 18, 29)",
+  RED: "rgba(191, 18, 29, 0.9)",
 };
 
-const CONTAINER_WIDTH = 200;
+const CONTAINER_WIDTH = 70;
 const CONTAINER_HEIGHT = CONTAINER_WIDTH * 0.55;
 const CONTANER_BR = CONTAINER_HEIGHT;
 const INACTIVE_COLOR = COLORS.GRAY_LIGHT;

@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import React from "react";
 import Animated, {
   interpolate,
@@ -52,6 +52,22 @@ const Thumb = ({ animated }: ThumbProps) => {
     <Animated.View style={rStyle}>
       <Line1 animated={animated} />
       <Line2 animated={animated} />
+      {/*<View
+        style={{
+          height: THUMB_HEIGHT,
+          width: 2,
+          backgroundColor: "black",
+          position: "absolute",
+        }}
+      />*/}
+      {/*<View
+        style={{
+          width: THUMB_HEIGHT,
+          height: 2,
+          backgroundColor: "black",
+          position: "absolute",
+        }}
+      />*/}
     </Animated.View>
   );
 };
